@@ -1,8 +1,10 @@
 import { AppBar, Button, Grid, Toolbar } from '@material-ui/core';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { LOGIN_ROUTE } from '../utils/consts';
 
 const Navbar = () => {
-    const user = true;
+    const user = false;
     return (
         <AppBar color={"secondary"} position="static">
             <Toolbar>
@@ -10,7 +12,9 @@ const Navbar = () => {
                     {user ?
                         <Button variant={"outlined"}>Logout</Button>
                         :
-                        <Button variant={"outlined"}>Login</Button>
+                        <NavLink to={LOGIN_ROUTE}>
+                            <Button variant={"outlined"}>Login</Button>
+                        </NavLink>
                     }
                 </Grid>
             </Toolbar>
